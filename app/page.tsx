@@ -25,10 +25,10 @@ const frameMetadata = getFrameMetadata({
 });
 
 export const metadata: Metadata = {
-  title: 'zizzamia.xyz',
+  title: 'polymer-frame.vercel.app',
   description: 'LFG',
   openGraph: {
-    title: 'zizzamia.xyz',
+    title: 'polymer-frame.vercel.app',
     description: 'LFG',
     images: [`${NEXT_PUBLIC_URL}/park-1.png`],
   },
