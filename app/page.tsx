@@ -26,6 +26,7 @@ const frameMetadata = getFrameMetadata({
 
 export const metadata: Metadata = {
   title: 'polymer-frame.vercel.app',
+  metadataBase: new URL('https://polymer-frame.vercel.app'),
   description: 'LFG',
   openGraph: {
     title: 'polymer-frame.vercel.app',
