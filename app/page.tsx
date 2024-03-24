@@ -5,9 +5,6 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'Story time',
-    },
-    {
       action: 'tx',
       label: 'Send Base Sepolia',
       target: `${NEXT_PUBLIC_URL}/api/tx`,
@@ -15,7 +12,7 @@ const frameMetadata = getFrameMetadata({
     },
   ],
   image: {
-    src: `${NEXT_PUBLIC_URL}/park-3.png`,
+    src: `${NEXT_PUBLIC_URL}/polymer.png`,
     aspectRatio: '1:1',
   },
   input: {
