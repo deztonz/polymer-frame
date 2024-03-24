@@ -15,9 +15,7 @@ const frameMetadata = getFrameMetadata({
     src: `${NEXT_PUBLIC_URL}/polymer.png`,
     aspectRatio: '1:1',
   },
-  input: {
-    text: 'Tell me a story',
-  },
+
   postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
 });
 

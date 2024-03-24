@@ -20,7 +20,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse | Response> {
   const data = encodeFunctionData({
     abi: BuyMeACoffeeABI,
     functionName: 'buyCoffee',
-    args: [parseEther('0.001'), 'Coffee all day!'],
+    args: [parseEther('1'), 'Coffee all day!'],
   });
 
   const txData: FrameTransactionResponse = {
