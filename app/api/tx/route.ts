@@ -6,8 +6,9 @@ import { baseSepolia } from 'viem/chains';
 
 import BuyMeACoffeeABI from '../../_contracts/BuyMeACoffeeABI';
 import { BUY_MY_COFFEE_CONTRACT_ADDR } from '../../config';
-import type { FrameTransactionResponse } from '@coinbase/onchainkit/frame';
+import type { FrameTransactionEthSendParams, FrameTransactionResponse } from '@coinbase/onchainkit/frame';
 import { XCCounterUC_ADDR } from '../../config';
+import abi from '../../_contracts/BuyMeACoffeeABI';
 
 async function getResponse(req: NextRequest): Promise<NextResponse | Response> {
   const body: FrameRequest = await req.json();
@@ -20,7 +21,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse | Response> {
   const data = encodeFunctionData({
     abi: BuyMeACoffeeABI,
     functionName: 'buyCoffee',
-    args: [parseEther('1'), 'Coffee all day!'],
+    args: [parseEther('0.0001'), 'Coffee all day!'],
   });
 
   const txData: FrameTransactionResponse = {
@@ -33,7 +34,17 @@ async function getResponse(req: NextRequest): Promise<NextResponse | Response> {
       value: parseEther('0.000004').toString(), // 0.000004 ETH
     },
   };
-  return NextResponse.json(txData);
+
+  const txTest: FrameTransactionEthSendParams =
+  {
+      abi: [],
+      data,
+      to: XCCounterUC_ADDR,
+      value: parseEther('0.000004').toString(), // 0.000004 ETH
+      
+
+  }
+  return NextResponse.json(txTest);
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
