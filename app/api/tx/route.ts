@@ -28,23 +28,14 @@ async function getResponse(req: NextRequest): Promise<NextResponse | Response> {
     chainId: `eip155:${baseSepolia.id}`, // Remember Base Sepolia might not work on Warpcast yet
     method: 'eth_sendTransaction',
     params: {
-      abi: [],
+      abi: BuyMeACoffeeABI,
       data,
       to: XCCounterUC_ADDR,
       value: parseEther('0.000004').toString(), // 0.000004 ETH
     },
   };
 
-  const txTest: FrameTransactionEthSendParams =
-  {
-      abi: [],
-      data,
-      to: XCCounterUC_ADDR,
-      value: parseEther('0.000004').toString(), // 0.000004 ETH
-      
-
-  }
-  return NextResponse.json(txTest);
+  return NextResponse.json(txData);
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
